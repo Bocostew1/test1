@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Buttons</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('bali.jpg'); /* Replace 'background.jpg' with the filename of your photo */
+            background-size: cover;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%; /* Adjust as needed */
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly more opaque white on hover */
+        }
+
+        /* Media Query for smartphones */
+        @media screen and (max-width: 600px) {
+            .buttons {
+                width: 80%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div>
+    </div>
+</body>
+</html>
