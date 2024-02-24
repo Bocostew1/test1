@@ -11,6 +11,17 @@
             height: 100%;
         }
 
+        /* Dark grey background */
+        .dark-background {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1f1f1f; /* Dark grey background color */
+            z-index: 0; /* Place behind other content */
+        
+        /* Photo */
         .container {
             position: relative; /* Set container to relative position */
             display: flex;
@@ -19,6 +30,7 @@
             height: 100vh;
             background-image: url('france.jpg'); /* Replace 'france.jpg' with the filename of your photo */
             background-size: cover;
+            z-index: 1;
         }
 
         /* New element for dark grey background */
@@ -30,6 +42,7 @@
             height: 100%;
             background-color: #1f1f1f; /* Dark grey background color */
             opacity: 0.6; /* Adjust opacity as needed */
+            z-index: 2;
         }
 
         .buttons {
