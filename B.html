@@ -12,15 +12,28 @@
         }
 
         .container {
+            position: relative; /* Set container to relative position */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('france.jpg'); /* Replace 'background.jpg' with the filename of your photo */
+            background-image: url('france.jpg'); /* Replace 'france.jpg' with the filename of your photo */
             background-size: cover;
         }
 
+        /* New element for dark grey background */
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1f1f1f; /* Dark grey background color */
+            opacity: 0.6; /* Adjust opacity as needed */
+        }
+
         .buttons {
+            z-index: 1; /* Ensure buttons are on top of the background overlay */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -56,6 +69,9 @@
 </head>
 <body>
     <div class="container">
+        <!-- Dark grey background overlay -->
+        <div class="background-overlay"></div>
+
         <div class="buttons">
             <button>Button 1</button>
             <button>Button 2</button>
