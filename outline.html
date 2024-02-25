@@ -57,8 +57,7 @@
   const buttons = document.querySelectorAll('.button');
   buttons.forEach(button => {
     button.addEventListener('click', function() {
-      buttons.forEach(btn => btn.classList.remove('selected'));
-      this.classList.add('selected');
+      this.classList.toggle('selected');
     });
   });
 </script>
