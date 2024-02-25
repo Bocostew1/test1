@@ -38,9 +38,7 @@
     transition: all 0.3s ease;
   }
 
-  .button:hover,
-  .button:focus
-  .button:active {
+  .button.selected {
     background-color: #ffffff;
     color: #1f1f1f;
   }
@@ -53,6 +51,17 @@
   <a href="https://example.com/page2" class="button" target="_blank">Button 2</a>
   <a href="https://example.com/page3" class="button" target="_blank">Button 3</a>
 </div>
+
+<script>
+  // Add event listeners to each button to toggle the 'selected' class
+  const buttons = document.querySelectorAll('.button');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+  });
+</script>
 
 </body>
 </html>
