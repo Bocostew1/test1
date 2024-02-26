@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversation Starter</title>
+<style>
+  body {
+    background-color: #1f1f1f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-top: -10vh; /* Adjusted top margin */
+    padding-top: 0;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-left: 10px;
+  }
+
+  .button {
+    display: inline-block;
+    margin: 15px;
+    padding: 25px 25px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
+  }
+
+  .button:hover {
+    background-color: #ffffff;
+    color: #1f1f1f;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <button class="button" id="conversation-starter">Click for Conversation Starter</button>
+</div>
+
+<script>
+  const conversationStarters = [
+    "If you could go anywhere in the world, where would you go?",
+    "What's your favorite movie of all time?",
+    "If you could have any superpower, what would it be?",
+    "What's the most adventurous thing you've ever done?",
+    "If you could meet any historical figure, who would it be?",
+    "What's your favorite thing to do in your free time?",
+    "If you could only eat one food for the rest of your life, what would it be?",
+    "What's your biggest pet peeve?",
+    "If you could learn any skill instantly, what would it be?",
+    "What's your favorite season and why?"
+  ];
+
+  const button = document.getElementById('conversation-starter');
+  button.addEventListener('click', function() {
+    const randomIndex = Math.floor(Math.random() * conversationStarters.length);
+    this.innerText = conversationStarters[randomIndex];
+  });
+</script>
+
+</body>
+</html>
