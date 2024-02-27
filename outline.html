@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobile Optimized Page</title>
+<title>Conversation Starter</title>
 <style>
   body {
     background-color: #1f1f1f;
@@ -30,35 +30,53 @@
     margin: 15px;
     padding: 25px 25px;
     background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    color: #bfbfbf;
+    border: 2px solid #bfbfbf;
     border-radius: 10px;
     text-decoration: none;
     font-size: 18px;
     transition: all 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
   }
 
-  .button.selected {
-    background-color: #ffffff;
-    color: #1f1f1f;
-  }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <a href="https://wa.me/13032494369" class="button" target="_blank">W h a t s A p p</a>
-  <a href="https://soundcloud.com/user-580573924" class="button" target="_blank">S o u n d C l o u d</a>
-  <a href="https://urlgeni.us/instagram/striveartco" class="button" target="_blank">I n s t a g r a m</a>
+  <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
 </div>
 
 <script>
-  // Add event listeners to each button to toggle the 'selected' class
-  const buttons = document.querySelectorAll('.button');
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      this.classList.toggle('selected');
-    });
+  const conversationStarters = [
+    "If you could go anywhere in the world, where would you go?",
+    "What's your favorite movie of all time?",
+    "If you could have any superpower, what would it be?",
+    "What's the most adventurous thing you've ever done?",
+    "If you could meet any historical figure, who would it be?",
+    "What's your favorite thing to do in your free time?",
+    "If you could only eat one food for the rest of your life, what would it be?",
+    "What's your biggest pet peeve?",
+    "If you could learn any skill instantly, what would it be?",
+    "What's your favorite season and why?"
+  ];
+
+  let displayedQuestions = [];
+
+  const button = document.getElementById('conversation-starter');
+  button.addEventListener('click', function() {
+    if (displayedQuestions.length === conversationStarters.length) {
+      // Reset the displayed questions array if all questions have been shown
+      displayedQuestions = [];
+    }
+
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * conversationStarters.length);
+    } while (displayedQuestions.includes(randomIndex)); // Ensure the question hasn't been displayed before
+
+    displayedQuestions.push(randomIndex); // Add the index to the displayed questions array
+    this.innerText = conversationStarters[randomIndex];
   });
 </script>
 
