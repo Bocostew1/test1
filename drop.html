@@ -19,13 +19,15 @@
     margin-top: 150px; /* Adjust this value as needed */
   }
 
-  .accordion-item {
+  .accordion-item,
+  .submenu-item {
     outline: 2px solid #a9a9a9;
     cursor: pointer;
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 25px;
     color: #a9a9a9; /* Text color for main menu */
+    -webkit-border-radius: 10px; /* For WebKit-based browsers */
   }
 
   .submenu {
@@ -39,6 +41,7 @@
     border-radius: 5px;
     margin-bottom: 15px;
     color: #a9a9a9; /* Text color for submenu */
+    -webkit-border-radius: 5px; /* For WebKit-based browsers */
   }
 </style>
 </head>
