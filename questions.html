@@ -39,6 +39,10 @@
     cursor: pointer; /* Add cursor pointer */
   }
 
+  .back-button-container {
+    position: relative; /* Added relative positioning */
+  }
+
   .back-button {
     position: absolute;
     top: 20px;
@@ -48,13 +52,22 @@
     cursor: pointer;
     border: none;
     background: none;
+    width: 50px; /* Added width and height */
+    height: 50px;
+    border-radius: 50%; /* Circular shape */
+    border: 2px solid #bfbfbf; /* Border around circle */
+    display: flex; /* Center icon vertically and horizontally */
+    justify-content: center;
+    align-items: center;
   }
 
 </style>
 </head>
 <body>
 
-<button class="back-button" onclick="goBack()">&#8249;</button>
+<div class="back-button-container">
+  <button class="back-button" onclick="goBack()">&#8249;</button>
+</div>
 
 <div class="container">
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
