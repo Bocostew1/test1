@@ -39,9 +39,22 @@
     cursor: pointer; /* Add cursor pointer */
   }
 
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #bfbfbf;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
 </style>
 </head>
 <body>
+
+<button class="back-button" onclick="goBack()">&#8249;</button>
 
 <div class="container">
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
@@ -66,6 +79,10 @@
     const randomIndex = Math.floor(Math.random() * conversationStarters.length);
     this.innerText = conversationStarters[randomIndex];
   });
+
+  function goBack() {
+    window.history.back();
+  }
 </script>
 
 </body>
