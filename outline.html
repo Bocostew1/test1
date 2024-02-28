@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conversation Starter</title>
+<title>Mobile Optimized Page</title>
 <style>
   body {
     background-color: #1f1f1f;
@@ -23,7 +23,6 @@
     padding-right: 10px;
     padding-bottom: 0;
     padding-left: 10px;
-    position: relative; /* Added position relative */
   }
 
   .button {
@@ -31,60 +30,27 @@
     margin: 15px;
     padding: 25px 25px;
     background-color: transparent;
-    color: #bfbfbf;
-    border: 2px solid #bfbfbf;
+    color: #a9a9a9;
+    border: 2px solid #a9a9a9;
     border-radius: 10px;
     text-decoration: none;
     font-size: 18px;
     transition: all 0.3s ease;
-    cursor: pointer; /* Add cursor pointer */
   }
 
-  .previous {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    margin: 15px;
-    padding: 10px 10px;
-    background-color: transparent;
-    color: #bfbfbf;
-    border: 2px solid #bfbfbf;
-    border-radius: 50%; /* Adjusted border radius */
-    text-decoration: none;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    cursor: pointer; /* Add cursor pointer */
+  .button:hover {
+    background-color: #ffffff;
+    color: #1f1f1f;
   }
-
 </style>
 </head>
 <body>
 
 <div class="container">
-  <a href="#" class="previous" style="border-radius: 50%;">&#8249;</a>
-  <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
+  <a href="https://wa.me/13032494369" class="button" target="_blank">W h a t s A p p</a>
+  <a href="https://soundcloud.com/user-580573924" class="button" target="_blank">S o u n d C l o u d</a>
+  <a href="https://urlgeni.us/instagram/striveartco" class="button" target="_blank">I n s t a g r a m</a>
 </div>
-
-<script>
-  const conversationStarters = [
-    "If you could go anywhere in the world, where would you go?",
-    "What's your favorite movie of all time?",
-    "If you could have any superpower, what would it be?",
-    "What's the most adventurous thing you've ever done?",
-    "If you could meet any historical figure, who would it be?",
-    "What's your favorite thing to do in your free time?",
-    "If you could only eat one food for the rest of your life, what would it be?",
-    "What's your biggest pet peeve?",
-    "If you could learn any skill instantly, what would it be?",
-    "What's your favorite season and why?"
-  ];
-
-  const button = document.getElementById('conversation-starter');
-  button.addEventListener('click', function() {
-    const randomIndex = Math.floor(Math.random() * conversationStarters.length);
-    this.innerText = conversationStarters[randomIndex];
-  });
-</script>
 
 </body>
 </html>
