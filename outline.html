@@ -23,6 +23,7 @@
     padding-right: 10px;
     padding-bottom: 0;
     padding-left: 10px;
+    position: relative; /* Added position relative */
   }
 
   .button {
@@ -39,11 +40,28 @@
     cursor: pointer; /* Add cursor pointer */
   }
 
+  .previous {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 15px;
+    padding: 10px 10px;
+    background-color: transparent;
+    color: #bfbfbf;
+    border: 2px solid #bfbfbf;
+    border-radius: 50%; /* Adjusted border radius */
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
+  }
+
 </style>
 </head>
 <body>
 
 <div class="container">
+  <a href="#" class="previous" style="border-radius: 50%;">&#8249;</a>
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
 </div>
 
