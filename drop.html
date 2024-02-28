@@ -28,13 +28,11 @@
     color: #bfbfbf; /* Text color for main menu */
     outline: none; /* Remove default outline */
     font-size: 18px; /* Adjust font size for main menu */
-    position: relative; /* Add relative positioning */
   }
 
   .submenu {
     display: none;
-    transition: height 0.3s ease; /* Change transition property to height */
-    overflow: hidden; /* Hide overflow content */
+    transition: display 0.3s ease; /* Add transition effect */
   }
 
   .submenu-item {
@@ -77,9 +75,9 @@
   function toggleSubMenu(id) {
     var submenu = document.getElementById(id);
     if (submenu.style.display === "block") {
-      submenu.style.height = "0"; // Set height to 0 for closing animation
+      submenu.style.display = "none";
     } else {
-      submenu.style.height = submenu.scrollHeight + "px"; // Set height to auto
+      submenu.style.display = "block";
       // Scroll to the submenu
       submenu.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
