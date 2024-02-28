@@ -76,6 +76,8 @@
     var submenu = document.getElementById(id);
     if (submenu.style.display === "block") {
       submenu.style.display = "none";
+      // Scroll to the top of the accordion menu
+      document.querySelector('.accordion').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       submenu.style.display = "block";
       // Scroll to the submenu
