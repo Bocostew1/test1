@@ -20,12 +20,12 @@
   }
 
   .accordion-item {
-    border: 2px solid #a9a9a9; /* Change outline to border */
+    border: 2px solid #bfbfbf; /* Change outline to border */
     cursor: pointer;
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 25px;
-    color: #a9a9a9; /* Text color for main menu */
+    color: #bfbfbf; /* Text color for main menu */
     outline: none; /* Remove default outline */
     font-size: 18px; /* Adjust font size for main menu */
   }
@@ -42,11 +42,6 @@
     margin-bottom: 15px;
     color: #a9a9a9; /* Text color for submenu */
     font-size: 16px; /* Adjust font size for submenu */
-  }
-
-  /* Add margin to the last accordion item when submenu is open */
-  .accordion-item:last-child.submenu-open {
-    margin-bottom: 50px; /* Adjust the space below the last submenu */
   }
 </style>
 </head>
@@ -78,19 +73,10 @@
 <script>
   function toggleSubMenu(id) {
     var submenu = document.getElementById(id);
-    var accordionItems = document.querySelectorAll('.accordion-item');
-    
     if (submenu.style.display === "block") {
       submenu.style.display = "none";
-      accordionItems.forEach(function(item) {
-        item.classList.remove('submenu-open');
-      });
     } else {
       submenu.style.display = "block";
-      accordionItems.forEach(function(item) {
-        item.classList.remove('submenu-open');
-      });
-      document.querySelector('.accordion-item:last-child').classList.add('submenu-open');
     }
   }
 </script>
