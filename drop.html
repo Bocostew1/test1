@@ -74,10 +74,6 @@
   function toggleSubMenu(id) {
     var submenu = document.getElementById(id);
     if (submenu.style.display === "block") {
-      // Smooth scroll to the top of the accordion item
-      var accordionItem = document.querySelector('.accordion-item');
-      accordionItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
       submenu.style.display = "none";
     } else {
       submenu.style.display = "block";
