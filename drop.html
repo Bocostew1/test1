@@ -77,6 +77,8 @@
       submenu.style.display = "none";
     } else {
       submenu.style.display = "block";
+      // Scroll to the submenu
+      submenu.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 </script>
