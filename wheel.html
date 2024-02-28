@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selector Wheel</title>
+<style>
+  .selector {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: transform 0.5s ease;
+  }
+  
+  .option {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+
+<div class="selector">
+  <ul class="options">
+    <li class="option">Option 1</li>
+    <li class="option">Option 2</li>
+    <li class="option">Option 3</li>
+    <li class="option">Option 4</li>
+    <li class="option">Option 5</li>
+    <li class="option">Option 6</li>
+    <li class="option">Option 7</li>
+  </ul>
+</div>
+
+<script>
+  const optionsList = document.querySelector('.options');
+  let angle = 0;
+
+  function rotateWheel() {
+    angle += 360 / 7;
+    optionsList.style.transform = `rotate(-${angle}deg)`;
+  }
+
+  document.querySelector('.selector').addEventListener('click', rotateWheel);
+</script>
+
+</body>
+</html>
