@@ -76,12 +76,12 @@
     var submenu = document.getElementById(id);
     if (submenu.style.display === "block") {
       submenu.style.display = "none";
-      // Scroll to the top of the accordion menu
-      document.querySelector('.accordion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Scroll to the top of the accordion menu with a slower duration
+      document.querySelector('.accordion').scrollIntoView({ behavior: 'smooth', block: 'start', duration: 1000 }); // Increase duration to slow down
     } else {
       submenu.style.display = "block";
-      // Scroll to the submenu
-      submenu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Scroll to the submenu with a slower duration
+      submenu.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 1000 }); // Increase duration to slow down
     }
   }
 </script>
