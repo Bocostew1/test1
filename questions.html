@@ -18,11 +18,8 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    margin-top: -10vh; /* Adjusted top margin */
-    padding-top: 0;
-    padding-right: 10px;
-    padding-bottom: 0;
-    padding-left: 10px;
+    margin-top: -10vh;
+    padding: 0 10px;
   }
 
   .button {
@@ -36,31 +33,15 @@
     text-decoration: none;
     font-size: 18px;
     transition: all 0.3s ease;
-    cursor: pointer; /* Add cursor pointer */
-  }
-
-  .back-button-container {
-    position: relative; /* Added relative positioning */
-  }
-
-  .back-button {
-    position: absolute;
-    top: 90px;
-    left: 15px;
-    font-size: 18px;
-    color: #5f5f5f;
     cursor: pointer;
-    background: none;
-    border: none; /* Remove border */
-    outline: none; /* Remove outline */
-}
+  }
 
 </style>
 </head>
 <body>
 
-<div class="back-button-container">
-  <button class="back-button" onclick="goBack()">b a c k</button>
+<div style="position: fixed; top: 40px; left: 20px;">
+  <button style="font-size: 18px; color: #5f5f5f; cursor: pointer; background: none; border: none; outline: none;" onclick="goBack()">b a c k</button>
 </div>
 
 <div class="container">
@@ -69,20 +50,4 @@
 
 <script>
   const conversationStarters = [
-    "What's one childhood memory that always brings a smile to your face?",
-    "What's something you've always wanted to tell me, but haven't?"
-  ];
-
-  const button = document.getElementById('conversation-starter');
-  button.addEventListener('click', function() {
-    const randomIndex = Math.floor(Math.random() * conversationStarters.length);
-    this.innerText = conversationStarters[randomIndex];
-  });
-
-  function goBack() {
-    window.history.back();
-  }
-</script>
-
-</body>
-</html>
+    "What's one childhood memory that always brings a s
