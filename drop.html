@@ -44,9 +44,25 @@
     color: #a9a9a9; /* Text color for submenu */
     font-size: 16px; /* Adjust font size for submenu */
   }
+
+  /* Added styles for the back button */
+  .back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: #5f5f5f;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
 </style>
 </head>
 <body>
+
+<button class="back-button" onclick="goBack()">b a c k</button>
 
 <div class="accordion">
   <div class="accordion-item" onclick="toggleSubMenu('submenu1')">Main Menu 1</div>
@@ -83,6 +99,11 @@
       // Scroll to the submenu with a slower duration
       submenu.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 1000 }); // Increase duration to slow down
     }
+  }
+
+  // Function to navigate back
+  function goBack() {
+    window.history.back();
   }
 </script>
 
