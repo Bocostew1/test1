@@ -45,9 +45,29 @@
 </div>
 
 <div class="container">
-  <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
+  <button class="button" id="conversation-starter">Click for a random conversation starter</button>
 </div>
 
 <script>
   const conversationStarters = [
-    "What's one childhood memory that always brings a s
+    "What's one place you've always wanted to travel to?",
+    "If you could meet any historical figure, who would it be?",
+    "What's the most adventurous thing you've ever done?",
+    "If you could only eat one food for the rest of your life, what would it be?",
+    "What's the last book you read that you couldn't put down?",
+    "If you could have any superpower, what would it be and why?",
+    "What's your favorite way to relax after a long day?",
+    "If you could time travel, would you go to the past or the future?",
+    "What's something on your bucket list that you haven't done yet?",
+    "If you could switch lives with any fictional character, who would it be?"
+  ];
+
+  const button = document.getElementById('conversation-starter');
+  button.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * conversationStarters.length);
+    alert(conversationStarters[randomIndex]);
+  });
+</script>
+
+</body>
+</html>
