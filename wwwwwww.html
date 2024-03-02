@@ -105,6 +105,12 @@
   const smallButton = document.getElementById('small-button');
   const conversationStarterButton = document.getElementById('conversation-starter');
 
+  // Initialize the small button with the first category "Who"
+  smallButton.innerText = words[currentWordIndex];
+
+  // Update main button with a random question from the initial category "Who"
+  updateMainButtonQuestions(words[currentWordIndex]);
+
   smallButton.addEventListener('click', function() {
     currentWordIndex = (currentWordIndex + 1) % words.length;
     this.innerText = words[currentWordIndex];
