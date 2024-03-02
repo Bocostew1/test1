@@ -1,0 +1,156 @@
+<div><br class="Apple-interchange-newline"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversation Starter</title>
+<style>
+  body {
+    background-color: #1f1f1f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 10px;
+  }
+
+  .button {
+    display: inline-block;
+    margin: 15px;
+    padding: 25px 25px;
+    background-color: transparent;
+    color: #bfbfbf;
+    border: 2px solid #bfbfbf;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .small-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #5f5f5f;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+</style>
+</head>
+<body>
+
+<div style="position: fixed; top: 100px; left: 10px;">
+  <button style="font-size: 18px; color: #5f5f5f; cursor: pointer; background: none; border: none; outline: none;" onclick="goBack()">back</button>
+</div>
+
+<div class="container">
+  <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
+  <button class="small-button" id="small-button">click here to select question word</button>
+</div>
+
+<script>
+  const words = ["w h o", "w h a t", "w h e n", "w h e r e", "w h y", "w h i c h", "h o w"];
+  const questionSets = {
+    "w h o": [
+      "Who has had a significant impact on your life recently?",
+      "Who do you admire for their creativity?",
+      "Who comes to mind when you think of resilience?",
+      "Who do you turn to for advice in difficult times?",
+      "Who has influenced your perspective on a particular topic?",
+      "Who inspires you to be a better person?"
+    ],
+    "w h a t": [
+      "What sparks your creativity?",
+      "What do you find fascinating about the universe?",
+      "What moments in life make you feel most alive?",
+      "What are your dreams made of?",
+      "What flavors remind you of home?",
+      "What does success mean to you?",
+      "What mysteries of the world intrigue you?"
+    ],
+    "w h e n": [
+      "When do you feel most alive?",
+      "When did you realize your passion for [insert interest or hobby]?",
+      "When would you say you are at your most creative?",
+      "When will you know you've achieved your goals?",
+      "When was the last time you felt truly inspired?",
+      "When are you most productive during the day?"
+    ],
+    "w h e r e": [
+      "Where do you find solace when the world feels overwhelming?",
+      "Where would you go for an adventure if time and money were no constraints?",
+      "Where can one discover the most authentic expressions of culture in your opinion?",
+      "Where do you see yourself in ten years, both geographically and personally?",
+      "Where did you first learn the importance of empathy?"
+    ],
+    "w h y": [
+      "Why do you think people often overlook the importance of self-reflection?",
+      "Why do you suppose some individuals find comfort in routine while others thrive on spontaneity?"
+    ],
+    "w h i c h": [
+      "Which experiences have shaped your understanding of empathy?",
+      "Which books have had a lasting impact on your worldview?",
+      "Which historical events do you believe have had the most significant influence on society today?"
+    ],
+    "h o w": [
+      "How do you navigate uncertainty in your daily life?",
+      "How can individuals foster empathy in their interactions with others?",
+      "How does creativity manifest itself in your daily routine?"
+    ]
+  };
+  let currentWordIndex = 0;
+  let currentQuestionIndex = 0;
+
+  const smallButton = document.getElementById('small-button');
+  const conversationStarterButton = document.getElementById('conversation-starter');
+
+  // Initialize the small button with the first category "Who"
+  smallButton.innerText = words[currentWordIndex];
+
+  // Update main button with a random question from the initial category "Who"
+  updateMainButtonQuestions(words[currentWordIndex]);
+
+  smallButton.addEventListener('click', function() {
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    this.innerText = words[currentWordIndex];
+    currentQuestionIndex = 0; // Reset question index when changing word category
+    updateMainButtonQuestions(words[currentWordIndex]);
+  });
+
+  conversationStarterButton.addEventListener('click', function() {
+    // Remove the conditional statement
+    currentQuestionIndex = (currentQuestionIndex + 1) % questionSets[words[currentWordIndex]].length;
+    updateMainButtonQuestions(words[currentWordIndex]);
+  });
+
+  function updateMainButtonQuestions(word) {
+    if (word !== "Select") {
+      const questions = questionSets[word];
+      if (questions) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        conversationStarterButton.innerText = questions[randomIndex];
+      }
+    } else {
+      conversationStarterButton.innerText = "click here to select question word";
+    }
+  }
+
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+</body>
+</html></div>
