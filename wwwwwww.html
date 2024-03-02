@@ -119,10 +119,9 @@
   });
 
   conversationStarterButton.addEventListener('click', function() {
-    if (currentWordIndex !== 0) {
-      currentQuestionIndex = (currentQuestionIndex + 1) % questionSets[words[currentWordIndex]].length;
-      updateMainButtonQuestions(words[currentWordIndex]);
-    }
+    // Remove the conditional statement
+    currentQuestionIndex = (currentQuestionIndex + 1) % questionSets[words[currentWordIndex]].length;
+    updateMainButtonQuestions(words[currentWordIndex]);
   });
 
   function updateMainButtonQuestions(word) {
