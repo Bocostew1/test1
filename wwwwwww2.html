@@ -1,4 +1,4 @@
-<div><br class="Apple-interchange-newline"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,6 +19,7 @@
     justify-content: center;
     height: 100vh;
     padding: 0 10px;
+    position: relative; /* Add this to make the position of the text relative to the container */
   }
 
   .button {
@@ -47,6 +48,17 @@
     transition: all 0.3s ease;
   }
 
+  /* Add styles for the text underneath the button */
+  .text-under-button {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333; /* Slightly darker color */
+    font-size: 16px;
+    width: 80%; /* Adjust width as needed */
+  }
+
 </style>
 </head>
 <body>
@@ -58,6 +70,7 @@
 <div class="container">
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
   <button class="small-button" id="small-button">click here to select question word</button>
+  <div class="text-under-button">This is the text underneath the button</div> <!-- Add the text here -->
 </div>
 
 <script>
@@ -90,67 +103,4 @@
     ],
     "w h e r e": [
       "Where do you find solace when the world feels overwhelming?",
-      "Where would you go for an adventure if time and money were no constraints?",
-      "Where can one discover the most authentic expressions of culture in your opinion?",
-      "Where do you see yourself in ten years, both geographically and personally?",
-      "Where did you first learn the importance of empathy?"
-    ],
-    "w h y": [
-      "Why do you think people often overlook the importance of self-reflection?",
-      "Why do you suppose some individuals find comfort in routine while others thrive on spontaneity?"
-    ],
-    "w h i c h": [
-      "Which experiences have shaped your understanding of empathy?",
-      "Which books have had a lasting impact on your worldview?",
-      "Which historical events do you believe have had the most significant influence on society today?"
-    ],
-    "h o w": [
-      "How do you navigate uncertainty in your daily life?",
-      "How can individuals foster empathy in their interactions with others?",
-      "How does creativity manifest itself in your daily routine?"
-    ]
-  };
-  let currentWordIndex = 0;
-  let currentQuestionIndex = 0;
-
-  const smallButton = document.getElementById('small-button');
-  const conversationStarterButton = document.getElementById('conversation-starter');
-
-  // Initialize the small button with the first category "Who"
-  smallButton.innerText = words[currentWordIndex];
-
-  // Update main button with a random question from the initial category "Who"
-  updateMainButtonQuestions(words[currentWordIndex]);
-
-  smallButton.addEventListener('click', function() {
-    currentWordIndex = (currentWordIndex + 1) % words.length;
-    this.innerText = words[currentWordIndex];
-    currentQuestionIndex = 0; // Reset question index when changing word category
-    updateMainButtonQuestions(words[currentWordIndex]);
-  });
-
-  conversationStarterButton.addEventListener('click', function() {
-    // Remove the conditional statement
-    currentQuestionIndex = (currentQuestionIndex + 1) % questionSets[words[currentWordIndex]].length;
-    updateMainButtonQuestions(words[currentWordIndex]);
-  });
-
-  function updateMainButtonQuestions(word) {
-    if (word !== "Select") {
-      const questions = questionSets[word];
-      if (questions) {
-        const randomIndex = Math.floor(Math.random() * questions.length);
-        conversationStarterButton.innerText = questions[randomIndex];
-      }
-    } else {
-      conversationStarterButton.innerText = "click here to select question word";
-    }
-  }
-
-  function goBack() {
-    window.history.back();
-  }
-</script>
-
-</body>
-</html></div>
+      "Where would you go for an adventure if time
