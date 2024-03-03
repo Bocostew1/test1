@@ -1,4 +1,4 @@
-<div><br class="Apple-interchange-newline"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -47,6 +47,15 @@
     transition: all 0.3s ease;
   }
 
+  /* Additional text style */
+  .additional-text {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333; /* Slightly darker color */
+  }
+
 </style>
 </head>
 <body>
@@ -58,6 +67,11 @@
 <div class="container">
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
   <button class="small-button" id="small-button">click here to select question word</button>
+</div>
+
+<!-- Additional Text -->
+<div class="additional-text">
+  Additional Text Goes Here
 </div>
 
 <script>
@@ -153,4 +167,4 @@
 </script>
 
 </body>
-</html></div>
+</html>
