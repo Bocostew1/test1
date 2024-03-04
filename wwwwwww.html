@@ -60,10 +60,6 @@
 </head>
 <body>
 
-<div style="position: fixed; top: 100px; left: 10px;">
-  <button style="font-size: 18px; color: #5f5f5f; cursor: pointer; background: none; border: none; outline: none;" onclick="goBack()">back</button>
-</div>
-
 <div class="container">
   <button class="button" id="conversation-starter">continue clicking this button for new randomized conversation starters</button>
   <button class="small-button" id="small-button">click here to select question word</button>
@@ -687,11 +683,7 @@
     } else {
       conversationStarterButton.innerText = "click here to select question word";
     }
-  }
 
-  function goBack() {
-    window.history.back();
-  }
 </script>
 
 </body>
